@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A backend for the chat app ",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -r dotenv/config --experimental-json-modules src/server.js"
+  },
+  "author": "Aashish Jha",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5", 
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.2"
+  }
+}
