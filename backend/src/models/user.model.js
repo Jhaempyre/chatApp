@@ -16,7 +16,7 @@ const userSchema = new Schema(
         },
         confirmPassword :{
             type : String ,
-            required : [ true ,"Confirm Password"]
+            required : [ false ,"Confirm Password"]
         },
         username: {
 			type: String,
