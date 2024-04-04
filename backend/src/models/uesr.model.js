@@ -1,5 +1,5 @@
 import mongoose , {Schema} from "mongoose";
-import bcrypt from "bcrypt";
+
 
 const userSchema = new Schema(
     {
@@ -13,6 +13,10 @@ const userSchema = new Schema(
         password:{
         type: String,  
         required:[true,"Passowrd caahiye re baba"]
+        },
+        confirmPassword :{
+            type : String ,
+            required : [ true ,"Confirm Password"]
         },
         username: {
 			type: String,
