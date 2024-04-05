@@ -65,17 +65,20 @@ const registerUser = async(req, res) => {
 };
 
 
+
 const loginUser = async(req,res)=>{
     try {
         const  { password , username } = req.body;
+        console.log( req.body);
         // check if the user exists or not
         let user = await User.findOne({ username });
+        console.log(user);
         if (!user) return res.status(401).json({ error:"Username does not exist!"});
       
         // compare the given password with the saved one
-        const isValidPass=await bcrypt.compare(password, user.hashedPassword);
+        const isValidPass=await bcrypt.compare(password, user.password);
         if(!isValidPass ) return res.status(401).json({ error: "Wrong Password!" });
-        delete user.hashedPassword
+        delete user.password
         generateTokenAndSetCookie(user._id,res)
         res.status(200).json({
             message :"user logged in ",
