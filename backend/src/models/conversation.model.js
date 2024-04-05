@@ -3,12 +3,12 @@ import mongoose from "mongoose"
 const conversationScehma = new  mongoose.Schema({
     partcipants:[{
         type : mongoose.Schema.ObjectId,
-        ref: User ,
+        ref: "User" ,
         required :true
     }],
     messages : [{
         type : mongoose.Schema.ObjectId,
-        ref : Message ,
+        ref : "Message" ,
         required : true,
         default :[]
     }]

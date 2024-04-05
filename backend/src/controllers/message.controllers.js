@@ -1,10 +1,11 @@
 import mongoose from 'mongoose'
-import Conversation from '../models/conversation.model';
-import Message  from '../models/message.model';
+import Conversation from '../models/conversation.model.js';
+import Message  from '../models/message.model.js';
 
 const sendMesage = async(req,res)=>{
     try {
         const {message}= req.body
+        console.log(req.body)
         const { id : receiverId } = req.params;
         const senderId = req.user._id;
     

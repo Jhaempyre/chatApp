@@ -108,10 +108,24 @@ const logOut = async(req,res)=>{
     }
 }
 
+const listOfSideBar = async(req,res)=>{
+try {
+    
+        const foundList = req.user_id
+        const notFound = await User.find({_id:{$ne :foundList}})
+                                .select('-password');
+        res.status(200).json(notFound);
+} catch (error) {
+    console.log("Bhavyaaa is paidal",error.message)
+}
+
+    
+}
 export{
     registerUser,
     loginUser,
-    logOut
+    logOut ,
+    listOfSideBar
 }
 
   
